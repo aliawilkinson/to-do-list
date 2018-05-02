@@ -1,9 +1,12 @@
+import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
 import '../assets/css/app.css';
+import List from './list'
 
 const App = () => (
-    <div>
-        <h1>To Do List</h1>
+    <div className="container">
+        <h1 className="center">To Do List</h1>
+        <List />
     </div>
 );
 
