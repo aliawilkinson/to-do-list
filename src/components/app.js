@@ -24,7 +24,11 @@ class App extends Component {
         })
     }
     deleteItem(item) {
-        console.log(item);
+        const list_data = this.state.list_data.slice();
+
+        list_data.splice(item, 1);
+
+        this.setState({ list_data });
     }
 
     getListData() {
@@ -33,11 +37,12 @@ class App extends Component {
     }
 
     render() {
-        return (<div className="container">
-            <h1 className="center">To Do List</h1>
-            <AddItem add={this.addItem.bind(this)} />
-            <List data={this.state.list_data} />
-        </div>
+        return (
+            <div className="container">
+                <h1 className="center">To Do List</h1>
+                <AddItem add={this.addItem.bind(this)} />
+                <List data={this.state.list_data} delete={this.deleteItem.bind(this)} />
+            </div>
         )
     };
 }
