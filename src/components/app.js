@@ -23,6 +23,9 @@ class App extends Component {
             list_data: [item, ...this.state.list_data]
         })
     }
+    deleteItem(item) {
+        console.log(item);
+    }
 
     getListData() {
         setTimeout(() => this.setState({ list_data }),
